@@ -1,6 +1,6 @@
 div {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  @apply absolute
+  w-full
+  h-full;
   padding-top: 5%
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  @Output()
+  public displayPanel: EventEmitter<number> = new EventEmitter();
+
+  public hasError: boolean = false
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public openRegister(): void{
+    this.displayPanel.emit(0)
   }
 
 }

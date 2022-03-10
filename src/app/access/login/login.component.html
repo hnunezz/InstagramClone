@@ -1,4 +1,4 @@
-<div class="card" style="max-width: 350px;">
+<div class="card" style="max-width: 350px; border: 1px solid #d9d9d9;">
   <div class="card-login">
     <div class="card-title"></div>
 
@@ -7,7 +7,7 @@
         <input
           type="email"
           class="form-control"
-          placeholder="E-mail"
+          placeholder="Telefone, nome de usuário ou email"
         >
       </div>
       <div>
@@ -19,17 +19,19 @@
       </div>
       <button type="submit">Entrar</button>
     </form>
-    <hr />
 
-    <p>O nome de usuário inserido não pertence a uma conta. Verifique seu nome de usuário e tente novamente.</p>
+    <div *ngIf="hasError">
+      <hr />
+      <p>O nome de usuário inserido não pertence a uma conta. Verifique seu nome de usuário e tente novamente.</p>
+    </div>
 
   </div>
 </div>
 <br />
-<div class="card-register" style="max-width: 350px;">
+<div class="card-register" style="max-width: 350px; border: 1px solid #d9d9d9;">
   <div>
     <p class="card-text">
-      Não tem uma conta? <a href="#" class="card-link">Cadastre-se</a>
+      Não tem uma conta? <a (click)="openRegister()" class="card-link">Cadastre-se</a>
     </p>
   </div>
 </div>

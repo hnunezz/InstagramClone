@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccessComponent implements OnInit {
 
+  public changeVisualization: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public displayPanel(event: number): void{
+    this.changeVisualization = event == 0 ? true : false
   }
 
 }

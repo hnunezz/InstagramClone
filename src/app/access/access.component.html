@@ -4,8 +4,16 @@
       <app-banner></app-banner>
     </div>
 
-    <div class="login">
-		<app-login></app-login>
+    <div *ngIf="changeVisualization; else login">
+      <div class="login">
+        <app-register (displayPanel)="displayPanel($event)"></app-register>
+      </div>
     </div>
+    <ng-template #login>
+      <div class="login">
+        <app-login (displayPanel)="displayPanel($event)"></app-login>
+      </div>
+    </ng-template>
+
   </div>
 </div>

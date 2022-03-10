@@ -1,0 +1,92 @@
+
+.card-title {
+  @apply bg-center
+    bg-no-repeat
+    w-full
+    mt-4;
+    background-image: url("../../../assets/logo-instagram.png");
+    height: 60px;
+}
+
+.card-register{
+  .card-login {
+    @apply bg-white
+      border
+      border-solid
+      border-x-stone-100
+      text-base
+      text-left;
+
+    .card-title {
+      @apply bg-center
+        bg-no-repeat
+        w-full
+        mt-4;
+        background-image: url("../../../assets/logo-instagram.png");
+        height: 60px;
+    }
+  }
+}
+
+form{
+  justify-content: center;
+  display: grid;
+
+  div {
+    @apply m-2.5
+    rounded
+    border
+    border-solid
+    border-x-stone-100
+    h-9
+    text-left
+    flex
+    items-center;
+    width: 258px;
+
+    input {
+      @apply w-full
+        h-full
+        p-1.5
+        outline-none;
+        background: #fafafa;
+        outline-offset: 2px;
+
+      &::placeholder {
+        @apply text-xs
+          font-sans;
+      }
+    }
+  }
+
+  button {
+    @apply m-2.5
+      text-white
+      rounded
+      font-sans
+      font-medium;
+      background: #0095f6;
+      width: 258px;
+      height: 30px;
+      margin-block-end: 20px;
+  }
+}
+
+
+.card-login {
+  > div {
+    @apply bg-white
+    text-sm
+    text-center;
+
+    p {
+      @apply text-sm
+      m-5
+      font-sans;
+    }
+
+    a {
+      color: #0095f6;
+    }
+  }
+}

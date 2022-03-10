@@ -3,7 +3,7 @@ div {
     @apply flex-row
           grid
           grid-cols-2
-          gap-20;
+          gap-8;
 
     .banner {
       @apply flex
@@ -12,7 +12,8 @@ div {
 
     .login {
       @apply flex
-        justify-start;
+        justify-start
+        mt-7;
     }
   }
 }

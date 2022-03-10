@@ -1,80 +1,92 @@
-.card-title {
-  background-image: url("../../../assets/logo-instagram.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 60px;
-  width: 100%;
-}
+.card-login {
+  @apply bg-white
+    border
+    border-solid
+    border-x-stone-100
+    text-base
+    text-left;
 
-.card-login{
-    background: white;
-    border: 1px solid #f2f2f2;
-    font-size: 17px;
-    text-align: left;
-
-    .card-title {
+  .card-title {
+    @apply bg-center
+      bg-no-repeat
+      w-full
+      mt-4;
       background-image: url("../../../assets/logo-instagram.png");
-      background-position: center;
-      background-repeat: no-repeat;
       height: 60px;
-      width: 100%;
-      margin: 6px 0px;
-      margin-block-end: 14px;
+  }
+
+  form {
+    @apply flex
+      flex-wrap
+      justify-center;
+
+    div {
+      @apply m-2.5
+      rounded
+      border
+      border-solid
+      border-x-stone-100
+      h-9
+      text-left
+      flex
+      items-center;
+      width: 258px;
+
+      input {
+        @apply w-full
+          h-full
+          p-1.5
+          outline-none;
+          background: #fafafa;
+          outline-offset: 2px;
+
+        &::placeholder {
+          @apply text-xs
+            font-sans;
+        }
+      }
     }
 
-    form{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-
-      div{
-        margin: 10px;
-        border-radius: 4px;
-        border: 1px solid #f2f2f2;
-        width: 258px;
-        height: 36px;
-        text-align: left;
-        display: flex;
-        align-items: center;;
-
-        input{
-          margin: 6px;
-          outline: none;
-        }
-
-      }
-
-      button{
+    button {
+      @apply m-2.5
+        text-white
+        rounded
+        font-sans
+        font-medium;
         background: #0095f6;
-        margin: 10px;
-        color: white;
-        border-radius: 4px;
         width: 258px;
         height: 30px;
-        font-weight: 500;
-      }
+        margin-block-end: 20px;
     }
+  }
 
-    p{
-      color: #ed4956;
-      font-size: 14px;
-      margin: 40px;
-      text-align: center;
-    }
+  p {
+    @apply text-sm
+      m-10
+      text-center
+      cursor-default;
+    color: #ed4956;
+  }
 }
 
-.card-register{
-  > div{
-    background: white;
-    border: 1px solid #f2f2f2;
-    font-size: 15px;
-    text-align: center;
+.card-register {
+  > div {
+    @apply bg-white
+    border
+    border-solid
+    border-x-stone-100
+    text-sm
+    text-center;
 
-    p{
-      margin: 14px;
+    p {
+      @apply text-sm
+      m-5
+      font-sans
+      cursor-default;
     }
 
-    a{
+    a {
+      @apply cursor-pointer;
       color: #0095f6;
     }
   }
