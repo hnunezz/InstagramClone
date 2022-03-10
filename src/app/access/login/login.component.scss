@@ -1,0 +1,81 @@
+.card-title {
+  background-image: url("../../../assets/logo-instagram.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60px;
+  width: 100%;
+}
+
+.card-login{
+    background: white;
+    border: 1px solid #f2f2f2;
+    font-size: 17px;
+    text-align: left;
+
+    .card-title {
+      background-image: url("../../../assets/logo-instagram.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 60px;
+      width: 100%;
+      margin: 6px 0px;
+      margin-block-end: 14px;
+    }
+
+    form{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      div{
+        margin: 10px;
+        border-radius: 4px;
+        border: 1px solid #f2f2f2;
+        width: 258px;
+        height: 36px;
+        text-align: left;
+        display: flex;
+        align-items: center;;
+
+        input{
+          margin: 6px;
+          outline: none;
+        }
+
+      }
+
+      button{
+        background: #0095f6;
+        margin: 10px;
+        color: white;
+        border-radius: 4px;
+        width: 258px;
+        height: 30px;
+        font-weight: 500;
+      }
+    }
+
+    p{
+      color: #ed4956;
+      font-size: 14px;
+      margin: 40px;
+      text-align: center;
+    }
+}
+
+.card-register{
+  > div{
+    background: white;
+    border: 1px solid #f2f2f2;
+    font-size: 15px;
+    text-align: center;
+
+    p{
+      margin: 14px;
+    }
+
+    a{
+      color: #0095f6;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+div {
+  > div {
+    @apply flex-row
+          grid
+          grid-cols-2
+          gap-20;
+
+    .banner {
+      @apply flex
+        justify-end;
+    }
+
+    .login {
+      @apply flex
+        justify-start;
+    }
+  }
+}
