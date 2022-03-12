@@ -56,6 +56,15 @@ form{
         @apply text-xs
           font-sans;
       }
+
+      &[error=true]{
+        border: 1px solid #f24444;
+        background-image: url(../../../assets/error-icon-input.svg);
+        background-repeat: no-repeat;
+        background-size: 16px;
+        background-position: right;
+        background-origin: content-box;
+      }
     }
   }
 
@@ -65,10 +74,14 @@ form{
       rounded
       font-sans
       font-medium;
-      background: #0095f6;
+      background-color: #0095f6;
       width: 258px;
       height: 30px;
       margin-block-end: 20px;
+
+      &:hover:active{
+        background-color: #0095f685;
+      }
   }
 }
 

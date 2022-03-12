@@ -2,12 +2,14 @@
   <div class="card-register">
     <div class="card-title"></div>
 
-    <form>
+    <form [formGroup]="formRegisterUser" (ngSubmit)="submitRegister()">
       <div class="form-group">
         <input
           type="email"
           class="form-control"
           placeholder="Número do celular ou e-mail"
+          formControlName="email"
+          [attr.error]="hasError"
         >
       </div>
       <div class="form-group">
@@ -15,6 +17,7 @@
           type="text"
           class="form-control"
           placeholder="Nome completo"
+          formControlName="name"
         >
       </div>
       <div class="form-group">
@@ -22,6 +25,7 @@
           type="text"
           class="form-control"
           placeholder="Nome de usuário"
+          formControlName="user"
         >
       </div>
       <div class="form-group">
@@ -29,20 +33,45 @@
           type="password"
           class="form-control"
           placeholder="Senha"
+          formControlName="password"
         >
       </div>
-      <button type="submit" class="btn btn-primary btn-sm btn-block">Cadastre-se</button>
+
+      <button
+        type="submit"
+        class="btn btn-primary btn-sm btn-block"
+      >
+        Cadastre-se
+      </button>
+
     </form>
 
-    <p class="text-center text-sm" style="margin: 0px 44px 26px;">Ao cadastrar-se, você concorda com nossos <b>Termos</b> e <b>Política de Dados</b> e <b>Política de Cookies</b>.</p>
+    <p
+      class="text-center text-sm"
+      style="margin: 0px 44px 26px;"
+      *ngIf="!hasError"
+    >
+      Ao cadastrar-se, você concorda com nossos <b>Termos</b> e <b>Política de Dados</b> e <b>Política de Cookies</b>.
+    </p>
+
+    <p
+      class="text-center text-sm text-red-500"
+      style="margin: 0px 44px 26px;"
+      *ngIf="hasError"
+    >
+      Corriga os erros do formulário.
+    </p>
+
 
   </div>
 </div>
+
 <br />
+
 <div class="card-login bg-white" style="width: 350px; border: 1px solid #d9d9d9;">
   <div class="card-body">
     <p class="card-text">
-      Tem uma conta? <a href="#" (click)="openLogin()" class="card-link">Conecte-se</a>
+      Tem uma conta? <a (click)="openLogin()" class="card-link">Conecte-se</a>
     </p>
   </div>
 </div>
