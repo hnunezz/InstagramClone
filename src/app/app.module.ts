@@ -23,6 +23,7 @@ import { AuthService } from './Service/auth.service';
     AppRoutingModule,
     ReactiveFormsModule,
 
+
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
