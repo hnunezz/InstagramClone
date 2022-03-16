@@ -46,7 +46,8 @@ export class RegisterComponent implements OnInit {
         this.formRegisterUser.value.password
       )
 
-      this.AuthService.RegisterUser(user)
+        this.AuthService.RegisterUser(user)
     }
   }
 }
+

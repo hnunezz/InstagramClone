@@ -2,12 +2,13 @@
   <div class="card-login">
     <div class="card-title"></div>
 
-    <form [formGroup]="formRegisterUser">
+    <form [formGroup]="formLoginUser" (ngSubmit)="authLogin()">
       <div>
         <input
           type="email"
           class="form-control"
           placeholder="Telefone, nome de usuário ou email"
+          formControlName="email"
         >
       </div>
       <div>
@@ -15,6 +16,7 @@
           type="password"
           class="form-control"
           placeholder="Senha"
+          formControlName="password"
         >
       </div>
       <button type="submit">Entrar</button>
