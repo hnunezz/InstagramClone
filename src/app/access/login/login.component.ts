@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   public hasError: boolean = false
 
-  constructor(private AuthService : AuthService) { }
+  constructor(public AuthService : AuthService) { }
 
   ngOnInit(): void {
   }

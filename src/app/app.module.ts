@@ -9,6 +9,8 @@ import { RegisterComponent } from './access/register/register.component';
 import { BannerComponent } from './access/banner/banner.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './Service/auth.service';
+import { HomeComponent } from './home/home.component';
+import { FeedComponent } from './home/feed/feed.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AuthService } from './Service/auth.service';
     AccessComponent,
     LoginComponent,
     RegisterComponent,
-    BannerComponent
+    BannerComponent,
+    HomeComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,

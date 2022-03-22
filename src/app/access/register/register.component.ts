@@ -17,37 +17,33 @@ export class RegisterComponent implements OnInit {
     'password': new FormControl(null)
   })
 
-  public hasError: boolean = false;
-
   @Output()
   public displayPanel: EventEmitter<number> = new EventEmitter()
 
-  constructor(public UtilsService: UtilsService, private AuthService: AuthService) { }
+  constructor(public UtilsService: UtilsService, public AuthService: AuthService) { }
 
   ngOnInit(): void {
   }
 
-  public openLogin(): void{
+  public openLogin(): void {
     this.displayPanel.emit(1)
   }
 
-  public submitRegister(): void{
+  public submitRegister(): void {
 
-    if(!this.UtilsService.validateEmail(this.formRegisterUser.value.email)){
-      this.hasError = true;
-    }
-    else{
-      this.hasError = false
+    const user: User = new User(
+      this.formRegisterUser.value.email,
+      this.formRegisterUser.value.name,
+      this.formRegisterUser.value.user,
+      this.formRegisterUser.value.password
+    )
 
-      const user: User = new User(
-        this.formRegisterUser.value.email,
-        this.formRegisterUser.value.name,
-        this.formRegisterUser.value.user,
-        this.formRegisterUser.value.password
-      )
-
-        this.AuthService.RegisterUser(user)
-    }
+    this.AuthService.RegisterUser(user)
+      .then(() => {
+        this.openLogin()
+        alert("usuario cadastrado com sucesso")
+      })
   }
+
 }
 

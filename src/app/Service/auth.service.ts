@@ -1,13 +1,17 @@
 import { User } from "../models/user.model";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword  } from "firebase/auth";
 import { getDatabase, ref, set } from "firebase/database";
+import { UtilsService } from "./utils.service";
 export class AuthService {
 
-  public RegisterUser(user: User): void {
+  public errorMessageLogin?: string;
+  public hasError: boolean = false;
+
+  public RegisterUser(user: User): Promise<any> {
     const auth = getAuth();
     const DTB = getDatabase()
 
-    createUserWithEmailAndPassword(auth, user.email, user.password)
+    return createUserWithEmailAndPassword(auth, user.email, user.password)
       .then((answer: any) => {
         set(ref(DTB, `users/${user.name}`), {
           name: user.name,
@@ -17,7 +21,7 @@ export class AuthService {
 
       })
       .catch((error: Error) => {
-        console.log(error)
+          console.log(error)
       })
   }
 
@@ -25,7 +29,15 @@ export class AuthService {
     const auth = getAuth();
 
     signInWithEmailAndPassword(auth, email, password)
-      .then((answer: any) => console.log(answer))
-      .catch((error: Error) => console.log(error))
+      .then((answer: any) => {
+        this.hasError = false
+          console.log(answer)
+      })
+      .catch((error: Error) =>
+      {
+        this.errorMessageLogin ="Usuário não encontrado. Verifique as Credenciais!"
+        this.hasError = true
+          console.log(error)
+      })
   }
 }

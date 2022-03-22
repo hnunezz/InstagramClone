@@ -7,7 +7,7 @@ export class UtilsService {
 
   constructor() { }
 
-  public validateEmail(email: string){
+  public validateEmail(email: string): boolean{
       var Regex = /^([a-z]){1,}([a-z0-9._-]){1,}([@]){1}([a-z]){2,}([.]){1}([a-z]){2,}([.]?){1}([a-z]?){2,}$/i;
 
       if (Regex.test(email)){
@@ -19,3 +19,4 @@ export class UtilsService {
       }
     }
 }
+

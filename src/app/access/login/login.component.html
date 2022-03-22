@@ -22,9 +22,9 @@
       <button type="submit">Entrar</button>
     </form>
 
-    <div *ngIf="hasError">
+    <div *ngIf="AuthService.hasError">
       <hr />
-      <p>O nome de usuário inserido não pertence a uma conta. Verifique seu nome de usuário e tente novamente.</p>
+      <p>{{ AuthService.errorMessageLogin }}</p>
     </div>
 
   </div>
