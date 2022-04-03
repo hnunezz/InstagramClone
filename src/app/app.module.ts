@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './Service/auth.service';
 import { HomeComponent } from './home/home.component';
 import { FeedComponent } from './home/feed/feed.component';
+import { AuthGuard } from './guard/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { FeedComponent } from './home/feed/feed.component';
 
 
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

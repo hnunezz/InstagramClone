@@ -82,6 +82,10 @@ form{
       &:hover:active{
         background-color: #0095f685;
       }
+
+      &:disabled{
+        background-color: #b4b4b4;
+      }
   }
 }
 

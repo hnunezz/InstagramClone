@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/models/user.model';
 import { UtilsService } from 'src/app/Service/utils.service';
 import { AuthService } from 'src/app/Service/auth.service';
@@ -10,15 +10,18 @@ import { AuthService } from 'src/app/Service/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-  public formRegisterUser: FormGroup = new FormGroup({
-    'email': new FormControl(null),
-    'name': new FormControl(null),
-    'user': new FormControl(null),
-    'password': new FormControl(null)
-  })
-
   @Output()
   public displayPanel: EventEmitter<number> = new EventEmitter()
+
+  public hasError: string[] = [];
+
+  public formRegisterUser: FormGroup = new FormGroup({
+    'email': new FormControl('', Validators.compose([Validators.required])),
+    'name': new FormControl('', Validators.compose([Validators.required])),
+    'user': new FormControl('', Validators.compose([Validators.required])),
+    'password': new FormControl('', Validators.compose([Validators.required, Validators.minLength(6)]))
+  })
+
 
   constructor(public UtilsService: UtilsService, public AuthService: AuthService) { }
 
@@ -31,6 +34,7 @@ export class RegisterComponent implements OnInit {
 
   public submitRegister(): void {
 
+    this.hasError = [];
     const user: User = new User(
       this.formRegisterUser.value.email,
       this.formRegisterUser.value.name,
@@ -38,12 +42,23 @@ export class RegisterComponent implements OnInit {
       this.formRegisterUser.value.password
     )
 
-    this.AuthService.RegisterUser(user)
-      .then(() => {
-        this.openLogin()
-        alert("usuario cadastrado com sucesso")
-      })
-  }
+    if (this.UtilsService.validateEmail(user.email)) {
+      this.hasError.push("Email Inválido!");
+    }
 
+    if (this.UtilsService.validatePassword(user.password)) {
+      this.hasError.push("Senha Inválida!");
+    }
+
+    if(this.hasError.length < 0){
+      this.AuthService.RegisterUser(user)
+        .then(() => {
+            this.openLogin();
+            this.formRegisterUser.reset();
+            this.hasError = []
+
+        })
+    }
+    }
 }
 

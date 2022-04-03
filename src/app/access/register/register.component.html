@@ -10,7 +10,6 @@
           class="form-control"
           placeholder="Número do celular ou e-mail"
           formControlName="email"
-          required
         >
       </div>
 
@@ -21,7 +20,6 @@
           class="form-control"
           placeholder="Nome completo"
           formControlName="name"
-          required
         >
       </div>
 
@@ -32,7 +30,6 @@
           class="form-control"
           placeholder="Nome de usuário"
           formControlName="user"
-          required
         >
       </div>
 
@@ -43,7 +40,6 @@
           class="form-control"
           placeholder="Senha"
           formControlName="password"
-          required
         >
       </div>
 
@@ -63,14 +59,13 @@
       Ao cadastrar-se, você concorda com nossos <b>Termos</b> e <b>Política de Dados</b> e <b>Política de Cookies</b>.
     </p>
 
-    <!-- <p
-      class="text-center text-sm text-red-500"
-      style="margin: 0px 44px 26px;"
+    <p
+      class="text-center text-sm"
+      style="margin: 0px 44px 26px; color: red;"
+      *ngFor="let error of hasError; let i = index"
     >
-        Erro
+      {{ hasError[i] }}
     </p>
- -->
-
   </div>
 </div>
 
