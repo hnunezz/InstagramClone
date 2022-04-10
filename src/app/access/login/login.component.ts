@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from 'src/app/Service/auth.service';
 
@@ -17,15 +17,15 @@ export class LoginComponent implements OnInit {
     'password': new FormControl(null)
   })
 
-  public hasError: boolean = false
-
-  constructor(public AuthService : AuthService) { }
+  constructor(public AuthService: AuthService) { }
 
   ngOnInit(): void {
   }
 
   public openRegister(): void {
-    this.displayPanel.emit(0)
+    this.AuthService.hasError = false;
+    this.AuthService.errorList = [];
+    this.displayPanel.emit(0);
   }
 
   public authLogin(): void {

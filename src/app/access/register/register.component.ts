@@ -13,8 +13,6 @@ export class RegisterComponent implements OnInit {
   @Output()
   public displayPanel: EventEmitter<number> = new EventEmitter()
 
-  public hasError: string[] = [];
-
   public formRegisterUser: FormGroup = new FormGroup({
     'email': new FormControl('', Validators.compose([Validators.required])),
     'name': new FormControl('', Validators.compose([Validators.required])),
@@ -34,7 +32,6 @@ export class RegisterComponent implements OnInit {
 
   public submitRegister(): void {
 
-    this.hasError = [];
     const user: User = new User(
       this.formRegisterUser.value.email,
       this.formRegisterUser.value.name,
@@ -42,23 +39,7 @@ export class RegisterComponent implements OnInit {
       this.formRegisterUser.value.password
     )
 
-    if (this.UtilsService.validateEmail(user.email)) {
-      this.hasError.push("Email Inválido!");
-    }
-
-    if (this.UtilsService.validatePassword(user.password)) {
-      this.hasError.push("Senha Inválida!");
-    }
-
-    if(this.hasError.length < 0){
-      this.AuthService.RegisterUser(user)
-        .then(() => {
-            this.openLogin();
-            this.formRegisterUser.reset();
-            this.hasError = []
-
-        })
-    }
-    }
+    this.AuthService.RegisterUser(user);
+  }
 }
 

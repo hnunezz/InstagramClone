@@ -62,9 +62,9 @@
     <p
       class="text-center text-sm"
       style="margin: 0px 44px 26px; color: red;"
-      *ngFor="let error of hasError; let i = index"
+      *ngFor="let error of AuthService.errorList"
     >
-      {{ hasError[i] }}
+      {{ error }}
     </p>
   </div>
 </div>
