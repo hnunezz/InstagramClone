@@ -10,9 +10,21 @@
     justify-content: space-between;
 }
 
+.card-action{
+      @apply grid
+       grid-cols-3
+       grid
+       items-center;
+
+       width: 120px;
+       margin: 8px 14px;
+       grid-gap: 12px;
+       gap: 20px;
+}
+
 .card-footer{
     display: grid;
-    height: 134px;
+    height: 150px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
@@ -25,11 +37,21 @@
 .row{
   border: 1px solid #dbdbdb;
   border-radius: 3px;
-  margin: 20px;
-  margin: 50px 0px;
+  margin: 50px 0px 50px 0px;
   background: white;
 
   &:first-child{
     margin-top: 140px;
   }
+}
+
+.teste{
+  display: flex;
+    justify-content: space-between;
+}
+
+.comments-container{
+  display: flex;
+  margin: 12px;
+  border-top: 1px solid #f2f2f2;
 }

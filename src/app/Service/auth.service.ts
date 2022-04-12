@@ -29,7 +29,7 @@ export class AuthService {
       });
 
     })
-    .catch((error: Error) => {
+    .catch((_) => {
         this.errorList = [];
 
         if (this.utilsService.validateEmail(user.email)) {
