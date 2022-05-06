@@ -12,6 +12,7 @@ import { AuthService } from './Service/auth.service';
 import { HomeComponent } from './home/home.component';
 import { FeedComponent } from './home/feed/feed.component';
 import { AuthGuard } from './guard/auth-guard.service';
+import { AddPostComponent } from './home/add-post/add-post.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,13 @@ import { AuthGuard } from './guard/auth-guard.service';
     RegisterComponent,
     BannerComponent,
     HomeComponent,
-    FeedComponent
+    FeedComponent,
+    AddPostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
 
 
   ],

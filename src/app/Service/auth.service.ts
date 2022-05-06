@@ -17,8 +17,7 @@ export class AuthService {
 
   public RegisterUser(user: User): Promise<any> {
     const auth = getAuth();
-    const DTB = getDatabase()
-
+    const DTB = getDatabase();
 
     return createUserWithEmailAndPassword(auth, user.email, user.password)
     .then(() => {

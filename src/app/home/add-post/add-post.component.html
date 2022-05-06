@@ -1,0 +1,30 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          Criar nova publicação
+        </h5>
+      </div>
+    <form [formGroup]="formAddPost" (ngSubmit)="addPost()">
+      <div class="modal-body">
+          <div>
+
+          </div>
+          <input
+            type="text"
+            placeholder="Título da publicação"
+            formControlName="post_title"
+          >
+          <button
+            type="submit"
+          >
+            Publicar
+          </button>
+      </div>
+    </form>
+    <!-- <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-primary">Save changes</button>
+    </div> -->
+  </div>
+</div>

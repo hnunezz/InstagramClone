@@ -8,7 +8,11 @@
 
     <div class="instagram-utils">
       <img src="../../assets/instagramUtils/home.svg">
-      <img src="../../assets/instagramUtils/add.svg">
+      <img
+        src="../../assets/instagramUtils/add.svg"
+        class="cursor-pointer"
+        (click)="modalView = !modalView"
+      >
       <img src="../../assets/instagramUtils/explore.svg">
       <img src="../../assets/instagramUtils/like.svg">
 
@@ -20,4 +24,18 @@
 
 <div class="feed-container">
   <app-feed></app-feed>
+
+  <app-add-post
+    [hidden]="modalView"
+    [style.display]="modalView ? 'none' : 'flex'"
+    [style.backgroundColor]="modalView ? 'transparent' : '#000000e8'"
+    class="w-full h-full absolute justify-center z-50"
+  >
+  </app-add-post>
+
+  <div
+    [hidden]="modalView"
+    class="close-button-modal"
+    (click)="modalView = !modalView"
+  ></div>
 </div>

@@ -8,7 +8,11 @@ import { AuthService } from '../Service/auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
+  public modalView:boolean;
+
+  constructor(private auth: AuthService) {
+    this.modalView = false;
+  }
 
   ngOnInit(): void {
   }

@@ -52,8 +52,7 @@
        items-center;
 
     & > img {
-      @apply w-8
-        cursor-pointer;
+      @apply w-8;
     }
 
     > div {
@@ -81,4 +80,15 @@
     h-full;
 
   background: #fafafa;
+}
+
+.close-button-modal{
+    position: absolute;
+    width: 54px;
+    height: 50px;
+    background: white;
+    z-index: 999;
+    left: 94%;
+    top: 4%;
+    cursor: pointer;
 }
