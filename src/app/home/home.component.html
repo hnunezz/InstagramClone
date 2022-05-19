@@ -27,7 +27,7 @@
 
   <app-add-post
     [hidden]="modalView"
-    [style.display]="modalView ? 'none' : 'flex'"
+    [style.display]="!modalView ? 'flex' : 'none'"
     [style.backgroundColor]="modalView ? 'transparent' : '#000000e8'"
     class="w-full h-full absolute justify-center z-50"
   >

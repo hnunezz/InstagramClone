@@ -10,7 +10,7 @@ import { PostService } from 'src/app/Service/post.service';
 })
 export class AddPostComponent implements OnInit {
 
-  public userEmail: string = '';
+  public userEmail: string | any = '';
 
   public formAddPost: FormGroup = new FormGroup({
     'post_title': new FormControl(null)
@@ -21,7 +21,7 @@ export class AddPostComponent implements OnInit {
   ngOnInit(): void {
     const auth = getAuth();
     auth.onAuthStateChanged((user) => {
-      console.log(user)
+      this.userEmail = user?.email;
     });
   }
 

@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   public modalView:boolean;
 
   constructor(private auth: AuthService) {
-    this.modalView = false;
+    this.modalView = true;
   }
 
   ngOnInit(): void {
